@@ -11,4 +11,5 @@ int main()
 		f.read((char*)&x,sizeof(x));
 		cout<<x<<endl;
 	}
+	f.close();
 }

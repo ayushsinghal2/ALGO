@@ -36,10 +36,13 @@ void quicksort(int a[],int low,int high)
 }
 int main()
 {
-	int a[5] = {55,222,1553,441,146};
+	int start = clock();
+	int a[5] = {5,4,3,2,1};
 	quicksort(a,0,4);
 	for (int i = 0; i < 5; ++i)
 	{
 		cout<<a[i]<<endl;
 	}
+	int stop = clock();
+	cout << "time: " << (stop-start)/double(CLOCKS_PER_SEC)*1000 << endl;	
 } 	

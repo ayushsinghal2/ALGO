@@ -46,7 +46,7 @@ void quicksort(int a[],int low,int high)
 int main()
 {
 	int start = clock();
-	int a[5] = {5,3,2,1,6};
+	int a[5] = {5,4,3,2,1};
 	quicksort(a,0,4);
 	for (int i = 0; i < 5; ++i)
 	{

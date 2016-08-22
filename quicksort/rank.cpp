@@ -1,4 +1,4 @@
-// find the rank of the given number ...
+// find the rank of the given number
 #include <iostream>
 using namespace std;
 int  partition(int a[], int low, int high )

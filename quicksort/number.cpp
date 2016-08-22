@@ -36,9 +36,9 @@ int rank (int a[] , int i , int j ,int r )
 	if (r==j-k+1)
 		return a[k];
 	else if (r<j-k+1)
-		rank(a,k+1,j,r);
+		return rank(a,k+1,j,r);
 	else
-		rank(a,i,k,r-j+k);
+		return rank(a,i,k,r-j+k);
 }
 int main()
 {

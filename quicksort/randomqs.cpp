@@ -28,7 +28,7 @@ int  partition(int a[], int low, int high )
 }
 int randompar(int a[] , int low , int high)
 {
-	int i = low + (rand()%(high-low+1));
+	int i = low + (rand()%(high-low));
 	int temp = a[low];
 	a[low] = a[i];
 	a[i] = temp;

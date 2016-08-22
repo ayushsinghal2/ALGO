@@ -1,3 +1,4 @@
+/* random qs*/
 #include <iostream>
 #include <ctime>
 #include <cstdlib>

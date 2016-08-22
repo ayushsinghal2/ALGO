@@ -1,4 +1,4 @@
-// find the rank of the given number
+// find the number of the given rank
 #include <iostream>
 #include <cstdlib>
 using namespace std;

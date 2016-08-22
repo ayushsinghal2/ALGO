@@ -28,6 +28,10 @@ int  partition(int a[], int low, int high )
 }
 int rank (int a[] , int i , int j ,int r )
 {
+	int fo = i + (rand()%(j-i+1));
+	int temp = a[i];
+	a[i]=a[fo];
+	a[fo]=temp;
 	int k = partition(a,i,j);
 	if (r==j-k+1)
 		return a[k];

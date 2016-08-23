@@ -42,10 +42,13 @@ int rank (int a[] , int i , int j ,int r )
 }
 int main()
 {
-	int a[5] = {5,3,2,1,6};
-	cout<<"Enter the rank of the number (1-5)";
-	int number;
+	int a[6] = {5,1,8,2,4,6};
+	int number=0;
+	while(number!=1000)
+	{cout<<"Enter the rank of the number (1-5)";
+	
 	cin>>number;
-	int ff = rank(a,0,4,number);
+	int ff = rank(a,0,5,number);
 	cout<<ff<<endl;
+	}
 }

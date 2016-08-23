@@ -38,21 +38,18 @@ int  partition(int a[], int low, int high )
 	return right;
 	
 }
-void goodpivot(int a[], int low, int high)
+void goodpivot(int a[],  int low, int high)
 {
 	int j=0;
-	for (int i = low; i < high; i+=5)    //////change generic......
+	for (int i = low; i < high ; i+=5)    //////change generic......
 	{
 		bubbleSort(a,i,i+5);
-	}
-	for (int i = low+2; i < high; i+=5)
-	{
-		j+=i;
 	}
 }
 int rank (int a[] , int i , int j ,int r )
 {
 	int fo = (i+j)/2;
+	cout<<"low  "<<i<<"  high  "<<j<<"  Pivot "<<fo<<endl;
 	int temp = a[i];
 	a[i]=a[fo];
 	a[fo]=temp;
@@ -70,7 +67,7 @@ int main()
 	cout<<"Enter the rank of the number (1-15)";
 	int number;
 	cin>>number;
-	goodpivot(a,0,15);
+	goodpivot(a,0,15);	
 	int ff = rank(a,0,14,number);
 	cout<<ff<<endl;
 }

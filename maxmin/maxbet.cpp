@@ -1,4 +1,5 @@
 /*max(a[j]-a[i]) for i<j<i+l*/
+////incomplete ???
 #include <iostream>
 using namespace std;
 int main()

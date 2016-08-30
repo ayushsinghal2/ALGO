@@ -17,7 +17,7 @@ int main()
 	for (int j = 0; j < 15; ++j) // change it to generic....
 	{
 		sum += a[j];
-		if(sum>max&&j>i+length)
+		if(sum>max&&j>=i+length)
 		{
 			start = i;
 			max=sum;

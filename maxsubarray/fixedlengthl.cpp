@@ -23,4 +23,4 @@ int main()
 		}
 	}
 	cout<<"Max sub array sum is "<<max<<endl;
-}
+} 	

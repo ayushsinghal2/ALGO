@@ -13,7 +13,7 @@ int main()
 		if(count<6&&a[k]<=6)
 		{
 			c[a[k]]++;
-			j++;
+			j=k;
 			if(c[a[k]]==1)
 			{count++;}	
 		}

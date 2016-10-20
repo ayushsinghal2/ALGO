@@ -40,7 +40,7 @@ public:
 		}
 	}
 };
-class bfs
+class dfs
 {
 	list <int> ll;           //data structure for the list stack.... 
 public:
@@ -68,7 +68,7 @@ public:
 };
 int main()
 {
-	bfs b;
+	dfs b;
 	graph h;
 	b.visit(h);
 }

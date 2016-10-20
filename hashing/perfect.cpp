@@ -27,7 +27,7 @@ int main()
 {
 	int no [10]={1,2,3,4,5,6,7,8,9,10};
 	int ni[20]={0};
-	int* 
+	list <int> tt[20]; 
 	int a,b,p,m;
 	srand (time(NULL));
 	a = rand()%10+1;
@@ -38,14 +38,8 @@ int main()
 	for (int i = 0; i < 10; ++i) //change generic
 	{
 		int c = hash(a,no[i],b,p,m);
-		if(ni[c]==0)
-		{
-			ni[c]++;
-		}
-		else
-		{
-
-		}
+		tt[c].push_back(no[i]);
+		ni[c]++;
 	}
 	int count=0;
 	for (int i = 0; i < m; ++i) 

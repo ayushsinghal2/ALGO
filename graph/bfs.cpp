@@ -75,5 +75,4 @@ int main()
 	bfs b;
 	graph h;
 	b.visit(h);
-	//h.displaytr();
 }

@@ -1,4 +1,6 @@
 //perfect hashing implementation ....
+//doesnot work if one of the elements is 0 (zero......) 
+//what to do if 2 elements are same ????
 #include <iostream>
 #include <cstdlib>
 #include <ctime> 
@@ -44,27 +46,62 @@ int main()
 	int count=0;
 	for (int i = 0; i < m; ++i) 
 	{
-		count += ni[i]*ni[i]; 
+		count += ni[i]*ni[i];
+		/*cout<<ni[i]<<endl; */
 	}
 	if(count<m)
 	{
 		ha* ht = (ha*) calloc(20,sizeof(ha));
-		for (int i = 0; i < 10; ++i) 
+		for (int i = 0; i < 20; ++i) 
 		{
-			int c = hash(a,no[i],b,p,m);
-			if(ht[i].numbers == NULL)
+			if(ni[i]>1)
 			{
-					ht[i].numbers = new int[ni[c]*ni[c]];
-					srand (time(NULL));
-					ht[i].a = rand()%10+1;
-					ht[i].b = rand()%997;
-					ht[i].p = 997;
-					ht[i].m = ni[c]*ni[c];
-					int d = hash(ht[i].a,no[i],ht[i].b,ht[i].p,ht[i].m);
+				int cc =0;
+				recompute:
+				cc++;
+				cout<<cc<<endl;
+				ht[i].numbers = (int * )calloc(ni[i]*ni[i],sizeof(int));
+				srand (time(NULL));
+				ht[i].a = rand()%10+1;
+				ht[i].b = rand()%997;
+				ht[i].p = 997;
+				ht[i].m = ni[i]*ni[i];
+				for (list<int>::iterator j = tt[i].begin(); j != tt[i].end(); ++j)
+				{
+					int d = hash(ht[i].a,*j,ht[i].b,ht[i].p,ht[i].m);
+					if(cc>5)
+					{
+						cout<<"Too many reattempts run the program again.....";
+						break;
+					}
+					if(ht[i].numbers[d]!=0 && ht[i].numbers[d]!=*j)
+						goto recompute;
+					else 
+						{
+							ht[i].numbers[d] = *j;
+							cout<<ht[i].numbers[d];
+						}
+
+				}
 
 			}
-
+			else 
+			{
+				if(ni[i]==0)
+				{}
+				else
+				{
+					ht[i].numbers = new int ;
+					list <int> :: iterator k;
+					k = tt[i].begin();
+					ht[i].numbers[0] = *k;
+				}
+			}
 		}
+	}
+	else
+	{
+		cout<<"FATAL";
 	}
 
 }

@@ -7,24 +7,20 @@ int main()
 	int x;
 	cout<<"Enter X ..."<<endl;
 	cin>>x;
-	int t[9][x];
-	for (int i = 0; i < x; ++i)
+	int t[10][x];
+	for (int j = 1; j < x; ++j)
 	{
-		t[i][0] = 0;
-		t[0][i] = 0;
-		
+		t[1][j] = (j==a[j])?1:0;	
 	}
 	for (int i = 1; i < 10; ++i)
 	{
-		for (int j = 1; j < x; ++j)
+		for (int j = 0; j < x; ++j)
 		{
-			if(t[i-1][j] + a[i-1] > j)
-				t[i][j] = t[i-1][j];
+			if(t[i-1][j]==1||(j-a[i]>0 && t[i-1][j-a[i]]==1))
+				t[i][j]=1;
 			else
-			{
-				t[i][j] = ((t[i-1][j-a[i-1]+a[i-1]]>t[i-1][j])?(t[i-1][j-a[i-1]+a[i-1]]):(t[i-1][j]));
-			}
+				t[i][j]=0;
 		}
 	}
-	cout<<t[10][x-1]<<endl;
+	cout<<"ANSWER IS ....."<<t[9][x-1]; //0 for not possible 1 for possible...
 }
